@@ -26,17 +26,38 @@ public class JediExport {
 
 	/**
 	 *  Loads the template from the classpath resource jedi_template.xls. 
-	 *  The target excel file will be written to target/jedi_template.xls.
+	 *  
+	 *  It overrides the template sheet with the data.
 	 *  
 	 * @throws IOException
 	 */
-	public void exportJediExcelTemplate() throws IOException {
+	public void exportJediExcelUsingNewTemplate() throws IOException {
 		try(InputStream is = Jedi.class.getResourceAsStream("jedi_template.xls")) {
+			//	The target excel file will be written to target/jedi_template.xls.
 			try (OutputStream os = new FileOutputStream("target/jedi_template.xls")) {
 				Context context = new Context();
 				context.putVar("jedis", jedis);
 				//	All the main processing is performed here
 				JxlsHelper.getInstance().processTemplate(is, os, context);
+			}
+		}
+	}
+	
+	/**
+	 *  Loads the template from the classpath resource jedi_template.xls. 
+	 *  
+	 *  It writes the jedi content, on A1 cell, at sith_template.xls existing file.
+	 *  
+	 * @throws IOException
+	 */
+	public void exportJediExcelUsingExistingTemplate() throws IOException {
+		try(InputStream is = Jedi.class.getResourceAsStream("jedi_template.xls")) {
+			//	The target excel file will be written to target/sith_template.xls.
+			try (OutputStream os = new FileOutputStream("target/sith_template.xls")) {
+				Context context = new Context();
+				context.putVar("jedis", jedis);
+				//	All the main processing is performed here
+				JxlsHelper.getInstance().processTemplateAtCell(is, os, context, "Result!A1");
 			}
 		}
 	}
