@@ -1,14 +1,14 @@
 /**
  * 
  */
-package br.com.jxls_me.utils;
+package br.com.jxls_me.util;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import br.com.jxls_me.jxls_me.Jedi;
+import br.com.jxls_me.pojo.Jedi;
 
 /**
  * Useful methods to manipulate Jedis
