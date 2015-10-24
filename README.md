@@ -66,6 +66,8 @@ public void exportJediExcelUsingNewTemplate() throws IOException {
 Here we are loading the template from the classpath resource `jedi_template.xls`. And the target excel file will be written to `target/jedi_template.xls`.
 
 -----
-The final template for the example to output a list of Jedi objects can be [downloaded here](https://www.dropbox.com/s/v7omwlne2zv0t4o/jedi_template.xls?dl=0) and looks like this:
 
-<img src="https://www.dropbox.com/s/og6jhadmi18mvwm/jedi-template.png?dl=0" itemprop="image" alt="Jedi Template" width="300px">
+The final template to output a list of Jedi objects can be [downloaded here](https://www.dropbox.com/s/v7omwlne2zv0t4o/jedi_template.xls?dl=0) and looks like this:
+
+![alt text][logo]
+[logo]: https://github.com/andreybleme/jxls-me/blob/master/img/jedi-template.png "Jedi Template"
